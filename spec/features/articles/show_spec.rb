@@ -14,5 +14,14 @@ describe 'Article Show Page' do
 
       expect(page).to_not have_content(@a2.title)
     end
+
+    it 'should have link to go back to articles index' do
+      visit "/articles/#{@a1.id}"
+
+      expect(page).to have_link("<< Back to Articles List")
+      click_link
+
+      expect(current_path).to eq(articles_path)
+    end
   end
 end
