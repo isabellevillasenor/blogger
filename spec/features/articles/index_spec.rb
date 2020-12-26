@@ -14,5 +14,15 @@ describe 'Articles Index' do
 
       expect(page).to have_content(@a2.title)
     end
+
+    it 'should have links on every title' do
+      visit '/articles'
+
+      expect(page).to have_link("#{@a1.title}")
+      expect(page).to have_link("#{@a2.title}")
+
+      click_link("#{@a1.title}")
+      expect(current_path).to eq("/articles/#{@a1.id}")
+    end
   end
 end
