@@ -1,0 +1,3 @@
+<h1 style="color:#65c485;">Edit <%= @article.title %></h1>
+
+<%= render partial: 'form', locals: { path: "/articles/#{@article.id}", method: :patch, button_text: 'Update Article', class: "articles_form" } %>
