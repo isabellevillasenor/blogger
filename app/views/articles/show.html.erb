@@ -2,4 +2,5 @@
 <h1 style="color:Violet;"><%= @article.title %></h1>
 <p style="color:SlateBlue;"><%= @article.body %></p>
 
-<b><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: 'Are You Sure You Want To Delete This Article?'}, class: 'css_class', style: 'color:#65c485' %></b>
+<b><%= link_to "Edit", edit_article_path(@article), class: 'css_class', style: 'color:#65c485' %></b><br/>
+<b><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: 'Are You Sure You Want To Delete This Article?'}, class: 'css_class', style: 'color:#65c485' %></b><br/>
