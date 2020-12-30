@@ -5,3 +5,5 @@
     <li><%= link_to a.title, article_path(a), class: 'css_class', style: 'color:#7D98AD' %></li>
   <% end %>
 </ul>
+
+<b><%= link_to 'Delete Tag', tag_path(@tag), method: :delete, class: 'css_class', style: 'color:#65c485' %></b>

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create]
   end
-  resources :tags, only: [:index, :show]
+  resources :tags, only: [:index, :show, :destroy]
 end
