@@ -20,7 +20,7 @@ describe 'Article Show Page' do
     it 'should show the articles comments' do
       visit article_path(@a1)
 
-      expect(page).to have_content("Comments")
+      expect(page).to have_content("Comments (#{@a1.comments.size})")
       expect(page).to have_content(@c1.author_name)
       expect(page).to have_content(@c1.body)
       expect(page).to have_content(@c2.author_name)
@@ -44,7 +44,7 @@ describe 'Article Show Page' do
       visit article_path(@a1)
 
       expect(page).to have_link("<< Back to Articles List")
-      click_link
+      click_link "<< Back to Articles List"
 
       expect(current_path).to eq(articles_path)
     end
