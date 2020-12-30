@@ -1,0 +1,9 @@
+<h1 style="color:Violet;">All Tags</h1>
+
+<ul style="color:SlateBlue;" >
+  <% @tags.each do |t| %>
+    <li>
+      <%= link_to t.name, tag_path(t), class: 'css_class', style: 'color:SlateBlue'%>
+    </li>
+  <% end %>
+</ul>
