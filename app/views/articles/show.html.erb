@@ -1,6 +1,11 @@
 <b><%= link_to "<< Back to Articles List", articles_path, class: 'css_class', style: 'color:#65c485' %></b><br/>
 <h1 style="color:Violet;"><%= @article.title %></h1>
 <p style="color:SlateBlue;"><%= @article.body %></p>
+<p style="color:#7D98AD;"><b>Tags: </b>
+  <% @article.tags.each do |t| %>
+    <%= link_to t.name, tag_path(t), class: 'css_class', style: 'color:#7D98AD'%>
+  <% end %>
+</p>
 
 <b><%= link_to "Edit", edit_article_path(@article), class: 'css_class', style: 'color:#65c485' %></b><br/>
 <b><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: 'Are You Sure You Want To Delete This Article?'}, class: 'css_class', style: 'color:#65c485' %></b><br/>
