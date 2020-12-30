@@ -17,7 +17,7 @@ describe Article do
         article = Article.create!(title: "King Gizzard", body: "Writes interesting sci-fi")
         article.tags.create(name: 'music')
         article.tags.create(name: 'sci-fi')
-
+        
         expect(article.tag_list).to eq('music, sci-fi')
       end
     end
