@@ -12,11 +12,12 @@ describe 'New Article' do
 
       fill_in :title, with: 'Wowie Wowie'
       fill_in :body, with: 'I LeeLuLeeeee'
-      fill_in 'article[tag_list]', with: 'amazed, fun'
+      fill_in :tag_list, with: 'amazed, fun'
       click_button 'Create Article'
 
       expect(page).to have_content('Wowie Wowie')
       expect(page).to have_content('I LeeLuLeeeee')
+      expect(page).to have_content('amazed, fun')
     end
   end
 end
