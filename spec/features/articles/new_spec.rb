@@ -10,12 +10,14 @@ describe 'New Article' do
 
       expect(current_path).to eq(new_article_path)
 
-      fill_in :title, with: "Wowie Wowie"
-      fill_in :body, with: "I LeeLuLeeeee"
+      fill_in :title, with: 'Wowie Wowie'
+      fill_in :body, with: 'I LeeLuLeeeee'
+      fill_in :tag_list, with: 'amazed, fun'
       click_button 'Create Article'
 
-      expect(page).to have_content("Wowie Wowie")
-      expect(page).to have_content("I LeeLuLeeeee")
-    end 
+      expect(page).to have_content('Wowie Wowie')
+      expect(page).to have_content('I LeeLuLeeeee')
+      expect(page).to have_content('amazed, fun')
+    end
   end
 end
