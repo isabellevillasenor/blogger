@@ -12,7 +12,7 @@ describe 'As A Visitor' do
       click_link 'greetings'
 
       expect(current_path).to eq(tag_path(@t1))
-      expect(page).to have_content('greetings')
+      expect(page).to have_link('Oh Hello')
     end
   end
 end
