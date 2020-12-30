@@ -10,4 +10,16 @@ describe Article do
     it { should have_many(:comments) }
     it { should have_many(:tags).through(:taggings) }
   end
+
+  describe 'instance methods' do
+    describe '#tag_list' do
+      it 'should turn associated tags into a string' do
+        article = Article.create!(title: "King Gizzard", body: "Writes interesting sci-fi")
+        article.tags.create(name: 'music')
+        article.tags.create(name: 'sci-fi')
+
+        expect(article.tag_list).to eq('music, sci-fi')
+      end
+    end
+  end
 end
