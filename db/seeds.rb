@@ -8,3 +8,8 @@ Comment.destroy_all
 @c2 = @a1.comments.create!(author_name: "it also me", body: "sugoi")
 @c3 = @a2.comments.create!(author_name: "it not me", body: "neat")
 @c4 = @a2.comments.create!(author_name: "jk it me", body: "kuru")
+
+@t1 = @a1.tags.create!(name: "greetings")
+@t2 = @a1.tags.create!(name: "friendship")
+@t3 = @a2.tags.create!(name: "daily")
+@t4 = @a2.tags.create!(name: "puppy")
