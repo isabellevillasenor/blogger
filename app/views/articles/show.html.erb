@@ -8,8 +8,10 @@
   <% end %>
 </p>
 
-<b><%= link_to "Edit", edit_article_path(@article), class: 'css_class', style: 'color:#65c485' %></b><br/>
-<b><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: 'Are You Sure You Want To Delete This Article?'}, class: 'css_class', style: 'color:#65c485' %></b><br/>
+<% if logged_in? %>
+  <b><%= link_to "Edit", edit_article_path(@article), class: 'css_class', style: 'color:#65c485' %></b><br/>
+  <b><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: 'Are You Sure You Want To Delete This Article?'}, class: 'css_class', style: 'color:#65c485' %></b><br/>
+<% end %>
 
 <%= render partial: 'comments/form' %>
 <h3 style="color:#F4CDA6;"><u>Comments (<%= @article.comments.size %>) </u></h3>

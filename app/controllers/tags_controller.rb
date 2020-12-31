@@ -1,5 +1,7 @@
 class TagsController < ApplicationController
   before_action :tag_article, only: [:show, :destroy]
+  before_action :require_login, only: [:destroy]
+  
   def index
     @tags = Tag.all
   end
